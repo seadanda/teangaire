@@ -1,0 +1,9 @@
+[package]
+name = "teangaire"
+version = "0.1.0"
+authors = ["Dónal Murray <donal.murray@cern.ch>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
