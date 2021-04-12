@@ -1,3 +1,3 @@
 # teangaire
 
-An interpreter written in rust
+An interpreter written in rust based on eldiro by arzg.
