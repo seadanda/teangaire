@@ -1,4 +1,4 @@
-mod utils;
+use crate::utils;
 
 #[derive(Debug, PartialEq)]
 pub struct Number(pub i32);
