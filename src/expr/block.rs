@@ -1,5 +1,7 @@
+use crate::env::Env;
 use crate::stmt::Stmt;
 use crate::utils;
+use crate::val::Val;
 
 #[derive(Debug, PartialEq)]
 pub struct Block {
@@ -26,6 +28,10 @@ impl Block {
         let s = utils::tag("}", s)?;
 
         Ok((s, Block { stmts }))
+    }
+
+    pub(crate) fn eval(&self, env: &Env) -> Result<Val, String> {
+        Ok(Val::Unit)
     }
 }
 
@@ -88,6 +94,14 @@ mod tests {
                     ],
                 },
             )),
+        );
+    }
+
+    #[test]
+    fn eval_empty_block() {
+        assert_eq!(
+            Block { stmts: Vec::new() }.eval(&Env::default()),
+            Ok(Val::Unit),
         );
     }
 }
